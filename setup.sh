@@ -2,7 +2,7 @@
 
 EASEXX_DIR=_easexx
 
-git clone git@github.com:KaioFelps/easexx.git $EASEXX_DIR
+git clone https://github.com/KaioFelps/easexx.git $EASEXX_DIR
 cd $EASEXX_DIR
 cargo build --release
 mv target/release/easexx ..
