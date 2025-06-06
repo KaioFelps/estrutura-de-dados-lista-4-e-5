@@ -1,4 +1,4 @@
-# Estrutura de Dados 1 - Lista 4
+# Estrutura de Dados 1 - Lista 4 e 5
 
 Neste repositório estão as resoluções dos exercícios da quarta lista da matéria, referente a recursividade.
 
