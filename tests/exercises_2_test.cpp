@@ -1,21 +1,22 @@
 #include "exercises_2.hpp"
 #include <catch2/catch_all.hpp>
 
-TEST_CASE("`sum` deve somar todos os valores em posições pares de um vetor de inteiros")
+TEST_CASE("`sum_even` deve somar todos os valores em posições pares de um vetor de inteiros")
 {
     auto vec = std::vector<int>({1, 45, 6, 0, 184, 583, 804, 100, -394});
-    REQUIRE(334 == ex2::sum(vec));
+    REQUIRE(601 == ex2::sum_even(vec));
 }
 
 TEST_CASE("`product` deveria retornar o produto de todos os elementos de uma lista a partir de um ponto")
 {
-    auto list = std::list {1, 5, 0, 30, 20, 40, 58, 80, 19000};
+    auto list = std::list {1, 5, 0, 30, 20, 40, 58, 8};
     auto list_iterator = list.begin();
 
     // posiciona o início da iteração no elemento 30
-    std::advance(list_iterator, 2);
+    std::advance(list_iterator, 3);
 
-    REQUIRE(2115840000000 == ex2::product(list, list_iterator));
+    REQUIRE(11136000 == ex2::product(list, list_iterator));
+    REQUIRE(0 == ex2::product(list, list.begin()));
 }
 
 TEST_CASE("`min` deveria encontrar o menor elemento de um array-like")
@@ -68,7 +69,7 @@ TEST_CASE("`reverse` deveria inverter uma lista no segmento específicado")
 TEST_CASE("`palindrome` deveria verificar se uma string é um palíndromo")
 {
     REQUIRE(ex2::palindrome("arara"));
-    REQUIRE(ex2::palindrome("ararra"));
+    REQUIRE(ex2::palindrome("araara"));
     REQUIRE_FALSE(ex2::palindrome("carro"));
 }
 
