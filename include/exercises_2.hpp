@@ -7,7 +7,8 @@ namespace ex2
 
 /// Retorna a soma de todos os elementos de um vector de tamanho n
 /// que estão em posições pares.
-int sum(const std::span<int>& vec);
+int sum_even(const std::span<int>& vec, size_t last_idx);
+int sum_even(const std::span<int>& vec);
 
 /// Retorna o produto de todos os elementos de uma list de início em it.
 int product(const std::list<int>& lst, std::list<int>::iterator it);
