@@ -2,6 +2,9 @@
 #include <string>
 #include "exercises_1.hpp"
 
+namespace ex1
+{
+
 void print_txt(const char* text, const unsigned int times)
 {
     if (times == 0) return;
@@ -203,4 +206,6 @@ void copy(const std::list<int> &list1, const std::list<int>::const_iterator &it,
 void copy(const std::list<int> &list1, std::list<int> &list2)
 {
     copy(list1, list1.begin(), list2);
+}
+
 }
