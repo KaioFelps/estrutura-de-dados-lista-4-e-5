@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "exercises.hpp"
+#include "exercises_1.hpp"
 
 void print_txt(const char* text, const unsigned int times)
 {
