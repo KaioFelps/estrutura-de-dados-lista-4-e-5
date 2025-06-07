@@ -1,5 +1,5 @@
 #include <catch2/catch_all.hpp>
-#include "exercises.hpp"
+#include "exercises_1.hpp"
 #include <sstream>
 #include <iostream>
 
@@ -18,7 +18,7 @@ TEST_CASE("print_txt imprime texto N vezes", "[print_txt]")
 {
     auto output = capture_output([]()
     {
-        print_txt("Hello", 3);
+        ex1::print_txt("Hello", 3);
     });
 
     REQUIRE(output == "Hello\nHello\nHello\n");
@@ -28,7 +28,7 @@ TEST_CASE("count imprime contagem de 0 a 50, N vezes", "[count]")
 {
     auto output = capture_output([]()
     {
-        count(2);
+        ex1::count(2);
     });
 
     std::stringstream expected;
@@ -48,7 +48,7 @@ TEST_CASE("count imprime contagem de 0 a 50, N vezes", "[count]")
 TEST_CASE("count_max imprime contagem de 0 a max, N vezes", "[count_max]")
 {
     auto output = capture_output([]() {
-        count_max(2, 5);
+        ex1::count_max(2, 5);
     });
 
     std::stringstream expected;
@@ -71,7 +71,7 @@ TEST_CASE("print_vec imprime todos os elementos do vetor", "[print_vec]")
 
     auto output = capture_output([&]()
     {
-        print_vec(vec);
+        ex1::print_vec(vec);
     });
 
     REQUIRE("[ 1 2 3 ]\n" == output);
@@ -83,7 +83,7 @@ TEST_CASE("print_even imprime pares em ordem inversa", "[print_even]")
 
     auto output = capture_output([&]()
     {
-        print_even(vec);
+        ex1::print_even(vec);
     });
 
     REQUIRE("[ 6 4 2 ]\n" == output);
@@ -95,7 +95,7 @@ TEST_CASE("print_list imprime todos os elementos de uma lista duplamente encadea
 
     auto output = capture_output([&]()
     {
-        print_list(list);
+        ex1::print_list(list);
     });
 
     REQUIRE("[ 1 2 3 4 5 6 7 8 ]\n" == output);
@@ -107,7 +107,7 @@ TEST_CASE("print_rev imprime os elementos de uma lista encadeada simples em orde
 
     auto output = capture_output([&]()
     {
-        print_rev(list);
+        ex1::print_rev(list);
     });
 
     REQUIRE("[ 10 9 8 7 6 5 4 3 2 1 ]\n" == output);
@@ -118,7 +118,7 @@ TEST_CASE("remove_all remove todos os elementos do vetor")
     std::vector<int> vec = {1, 4, 53, 23, 5, 7, 32, 23, 5049, 39};
     REQUIRE(!vec.empty());
 
-    remove_all(vec);
+    ex1::remove_all(vec);
 
     REQUIRE(vec.empty());
 }
@@ -130,7 +130,7 @@ TEST_CASE("print_stack imprime todos os elementos de uma pilha sem modificá-la 
 
     auto output = capture_output([&]()
     {
-        print_stack_as_json(stk);
+        ex1::print_stack_as_json(stk);
     });
 
     REQUIRE(stack_size == stk.size());
@@ -142,12 +142,12 @@ TEST_CASE("push_to desempilha todos os elementos da primeira stack e coloca, inv
     auto stk1 = std::stack<int>({1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
     auto stk2 = std::stack<int>();
 
-    push_to(stk1, stk2);
+    ex1::push_to(stk1, stk2);
 
     REQUIRE(stk1.empty());
     REQUIRE_FALSE(stk2.empty());
 
-    auto stringified_stk2 = capture_output([&]() { print_stack_as_json(stk2); });
+    auto stringified_stk2 = capture_output([&]() { ex1::print_stack_as_json(stk2); });
     REQUIRE("[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]\n" == stringified_stk2);
 }
 
@@ -156,7 +156,7 @@ TEST_CASE("copy copia um vetor para o outro")
     std::vector<int> vec1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     std::vector<int> vec2;
 
-    copy(vec1, vec2);
+    ex1::copy(vec1, vec2);
 
     REQUIRE(vec1 == vec2);
 }
@@ -166,7 +166,7 @@ TEST_CASE("copy copia uma lista duplamente encadeada para outra")
     std::list<int> list1 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     std::list<int> list2;
 
-    copy(list1, list2);
+    ex1::copy(list1, list2);
 
     REQUIRE(list1 == list2);
 }

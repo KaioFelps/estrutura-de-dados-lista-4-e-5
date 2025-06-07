@@ -3,6 +3,9 @@
 #include <forward_list>
 #include <stack>
 
+namespace ex1
+{
+
 /// Imprime `times` vezes a string `text`
 void print_txt(const char* text, const unsigned int times);
 
@@ -50,3 +53,5 @@ void copy(const std::vector<int> &vec1, std::vector<int> &vec2);
 /// Copia o conteúdo de list1 para list2.
 void copy(const std::list<int> &list1, const std::list<int>::const_iterator &it, std::list<int> &list2);
 void copy(const std::list<int> &list1, std::list<int> &list2);
+
+}
