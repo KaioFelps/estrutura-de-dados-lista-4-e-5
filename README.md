@@ -9,5 +9,5 @@ Garanta que o `vcpkg` esteja instalado e rode `vcpkg install` para baixar os pac
 
 ## Rodando os testes
 
-Rode o comando `./easexx test` para compilar e rodar os testes localizados no arquivo
-[`exercises_test.cpp`](./tests/exercises_test.cpp).
+Rode o comando `./easexx test` para compilar e rodar os testes localizados nos arquivos
+[`exercises_1_test.cpp`](./tests/exercises_1_test.cpp.cpp) e [`exercises_2_test.cpp`](./tests/exercises_2_test.cpp).
