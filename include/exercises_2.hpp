@@ -14,17 +14,22 @@ int sum_even(const std::span<int>& vec);
 int product(const std::list<int>& lst, std::list<int>::iterator it);
 
 /// Retorna o menor dos elementos de um vector de tamanho n.
+int min(const std::span<const int>& vec, const size_t idx, int smallest_num);
 int min(const std::span<const int>& vec);
 
 /// Retorna o menor dos elementos de uma lista de início em it.
-int min(const std::list<int>& lst, std::list<int>::iterator it);
+int min(const std::list<int>& lst, const std::list<int>::const_iterator it, int smallest_num);
+int min(const std::list<int>& lst, const std::list<int>::const_iterator it);
+int min(const std::list<int>& lst);
 
 /// Informa se um elemento está em um vector de tamanho n.
+bool find(const std::span<const int>& vec, const int& elem, size_t idx);
 bool find(const std::span<const int>& vec, const int& elem);
 
 /// Retorna a quantidade de ocorrência de um elemento em um vector de
 /// tamanho n.
-int count(const std::span<const int>& vec, const int& elem);
+size_t count(const std::span<const int>& vec, const int& elem, const size_t idx, const size_t _count);
+size_t count(const std::span<const int>& vec, const int& elem);
 
 // `span` é como uma referência para um vetor ou um array (de c ou c++).
 // como não copia dados, não há necessidade de passar por referência, ainda mais
@@ -41,7 +46,7 @@ bool palindrome(const std::string& str, const size_t first, const size_t last);
 bool palindrome(const std::string& str);
 
 /// Verifica se os elementos de uma list foram um palíndromo.
-bool palindrome(const std::list<int>& lst, std::list<int>::iterator first, const std::list<int>::iterator last);
+bool palindrome(const std::list<int>& lst, std::list<int>::const_iterator first, std::list<int>::const_iterator last);
 bool palindrome(const std::list<int>& lst);
 
 }
