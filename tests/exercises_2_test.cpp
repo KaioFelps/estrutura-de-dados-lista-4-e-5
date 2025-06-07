@@ -53,7 +53,7 @@ TEST_CASE("`reverse` deveria inverter um segmento de um array-like")
     ex2::reverse(arr, (size_t) 3, (size_t) 6);
     
     int expected[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    REQUIRE(expected == arr);
+    REQUIRE(std::equal(std::span(expected).begin(), std::span(expected).end(), std::span(arr).begin()));
 }
 
 TEST_CASE("`reverse` deveria inverter uma lista no segmento específicado")
@@ -62,7 +62,7 @@ TEST_CASE("`reverse` deveria inverter uma lista no segmento específicado")
     auto expected = std::list<int> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     ex2::reverse(list, std::next(list.begin(), 3), std::next(list.begin(), 6));
-    REQUIRE(expected == list);
+    REQUIRE(std::equal(expected.begin(), expected.end(), list.begin()));
 }
 
 TEST_CASE("`palindrome` deveria verificar se uma string é um palíndromo")
