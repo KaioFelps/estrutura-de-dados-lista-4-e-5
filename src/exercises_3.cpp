@@ -160,7 +160,28 @@ int somar_digitos(int numero)
     return numero % 10 + somar_digitos(numero / 10);
 }
 
-// std::string inverter_string(const std::string& str); 
+void inverter_string(std::string::iterator primeiro, std::string::iterator ultimo)
+{
+    if (primeiro >= ultimo) return;
+    ultimo = std::prev(ultimo);
+
+    if (primeiro != ultimo)
+    {
+        auto primeiro_caractere = *primeiro;
+        *primeiro = *ultimo;
+        *ultimo = primeiro_caractere;
+    }
+
+    if (primeiro >= ultimo) return;
+    inverter_string(std::next(primeiro), ultimo);
+}
+
+std::string inverter_string(const std::string& str)
+{
+    auto copia_invertida = str;
+    inverter_string(copia_invertida.begin(), copia_invertida.end());
+    return copia_invertida;
+}
 
 // int nCk(int n, int k);
 

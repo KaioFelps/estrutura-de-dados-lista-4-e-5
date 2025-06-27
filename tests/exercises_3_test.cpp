@@ -76,12 +76,12 @@ TEST_CASE("Soma dos Dígitos de um Número")
     REQUIRE(27 == ex3::somar_digitos(999));
 }
 
-// TEST_CASE("Inversão de string")
-// {
-//     REQUIRE("cba" == ex3::inverter_string("abc"));
-//     REQUIRE("" == ex3::inverter_string(""));
-//     REQUIRE("a" == ex3::inverter_string("a"));
-// }
+TEST_CASE("Inversão de string")
+{
+    REQUIRE("cba" == ex3::inverter_string("abc"));
+    REQUIRE("" == ex3::inverter_string(""));
+    REQUIRE("a" == ex3::inverter_string("a"));
+}
 
 // TEST_CASE("Combinações (n escolhe k)")
 // {
