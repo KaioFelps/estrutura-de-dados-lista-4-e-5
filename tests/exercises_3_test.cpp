@@ -83,19 +83,19 @@ TEST_CASE("Inversão de string")
     REQUIRE("a" == ex3::inverter_string("a"));
 }
 
-// TEST_CASE("Combinações (n escolhe k)")
-// {
-//     REQUIRE(10 == ex3::nCk(5, 2));
-//     REQUIRE(1 == ex3::nCk(6, 0));
-//     REQUIRE(1 == ex3::nCk(6, 6));
-//     REQUIRE(6 == ex3::nCk(6, 1));
-// }
+TEST_CASE("Combinações (n escolhe k)")
+{
+    REQUIRE(10 == ex3::nCk(5, 2));
+    REQUIRE(1 == ex3::nCk(6, 0));
+    REQUIRE(1 == ex3::nCk(6, 6));
+    REQUIRE(6 == ex3::nCk(6, 1));
+}
 
-// TEST_CASE("Palidrômo")
-// {
-//     REQUIRE(ex3::é_palindromo("arara"));
-//     REQUIRE(ex3::é_palindromo("abba"));
-//     REQUIRE(ex3::é_palindromo(""));
-//     REQUIRE(ex3::é_palindromo("a"));
-//     REQUIRE_FALSE(ex3::é_palindromo("casa"));
-// }
+TEST_CASE("Palidrômo")
+{
+    REQUIRE(ex3::é_palindromo("arara"));
+    REQUIRE(ex3::é_palindromo("abba"));
+    REQUIRE(ex3::é_palindromo(""));
+    REQUIRE(ex3::é_palindromo("a"));
+    REQUIRE_FALSE(ex3::é_palindromo("casa"));
+}

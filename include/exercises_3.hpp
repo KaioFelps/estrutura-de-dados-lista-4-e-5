@@ -51,7 +51,6 @@ std::string inverter_string(const std::string& str);
 /// 9. Combinações (n escolhe k)
 /// ◦ Calcular o número de combinações de n elementos tomados k a k.
 /// ◦ Solução Recursiva: Usar a relação C(n, k) = C(n−1, k) + C(n−1, k−1).
-
 int nCk(int n, int k);
 
 /// 10. Palidrômo

@@ -183,8 +183,25 @@ std::string inverter_string(const std::string& str)
     return copia_invertida;
 }
 
-// int nCk(int n, int k);
+int nCk(int n, int k)
+{
+    if (n < 0 || k < 0 || n < k) return 0;
+    if (n == k || k == 0) return 1;
 
-// bool é_palindromo(std::string texto);
+    return nCk(n - 1, k) + nCk(n - 1, k - 1);
+}
+
+bool é_palindromo(std::string::iterator primeiro, std::string::iterator ultimo)
+{
+    if (primeiro >= ultimo) return true;
+    if (*primeiro != *ultimo) return false;
+    return é_palindromo(std::next(primeiro), std::prev(ultimo));
+}
+
+bool é_palindromo(std::string texto)
+{
+    if (texto.empty()) return true;
+    return é_palindromo(texto.begin(), std::prev(texto.end()));
+}
 
 }
